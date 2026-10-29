@@ -26,7 +26,7 @@ SOURCE_REQUIRED = ["id", "title", "url", "publisher", "kind", "tier", "license",
 SOURCE_ENUMS = {
     "kind": {"blog", "guide", "docs", "course", "book", "paper", "spec", "repo"},
     "tier": {"primary", "secondary"},
-    "license": {"all-rights-reserved", "cc-by-sa-4.0", "apache-2.0", "mit", "arxiv-default", "unknown"},
+    "license": {"all-rights-reserved", "cc-by-sa-4.0", "cc-by-4.0", "apache-2.0", "mit", "arxiv-default", "unknown"},
     "status": {"unverified", "verified", "dead"},
 }
 PAGE_REQUIRED = ["title", "status", "sources", "last_verified"]

@@ -3,7 +3,10 @@
 model:
   provider: replay        # replay | anthropic | openai  (replay = recorded responses, no key)
   name: null              # model id for the chosen provider; check the provider's current model list
-  temperature: 0
+  temperature: 0          # not forwarded by agentkit yet
+  price_per_mtok:         # USD per million tokens, from the provider's pricing page; required for live providers
+    input: null
+    output: null
 
 limits:
   max_steps: 15

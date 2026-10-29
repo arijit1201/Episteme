@@ -13,14 +13,14 @@ Record each decision with the date and the reason. Revisit a decision only when 
 | 2026-10-29 | Summarizer and verifier are separate agents. | A model checking its own draft shares its blind spots. |
 | 2026-10-29 | CI uses recorded responses; no API key in PR checks. | Free, deterministic, and safe for public PRs. |
 | 2026-10-29 | No standalone labs for now; starters carry the runnable code. | Scope control. Starters are tested in CI instead. |
+| 2026-10-30 | Repo is public (github.com/arijit1201/Episteme). | Free unlimited GitHub Actions minutes on standard runners. |
+| 2026-10-30 | Own thin model adapter (`agentkit/`), official `anthropic` and `openai` SDKs only. | Keeps the loop and provider shapes visible for learners; avoids a large dependency. LiteLLM stays an option if provider coverage becomes a need. |
+| 2026-10-30 | Docs site: Zensical, strict build in CI only; `.readthedocs.yaml` included but hosting not connected. | MkDocs 1.x is unmaintained and Material for MkDocs is in maintenance mode (EOL 2027-05-05, per squidfunk's posts). Zensical is its Python successor, MIT, alpha (0.0.73): acceptable because `docs/` is plain Markdown and a switch is cheap. Read the Docs hosts a build, it is not a generator. |
 
 ## Open
 
 | Decision | Options | Notes |
 |---|---|---|
-| Repo visibility | Public / private | Public: GitHub Actions on standard runners is free with no minute cap. Private (Free plan): 2,000 minutes/month included. |
-| Docs site generator | MkDocs (Material), Zensical, Docusaurus, Astro Starlight | TODO(verify): check each project's maintenance status before choosing. |
-| Model adapter | Own thin adapter / LiteLLM / provider SDKs only | Own adapter keeps the loop visible for learners; LiteLLM covers more providers. |
 | Framework for `src/framework/` per starter | OpenAI Agents SDK, Claude Agent SDK, LangGraph, PydanticAI, Google ADK | Pick per starter; verify current version in official docs first. |
 | Ingest scheduler | GitHub Actions cron / Claude Code scheduled task | Actions cron keeps it in the repo and needs an API key secret. |
 | Monthly API spend cap | e.g. $10 / $25 / $50 | Set in the provider console and in code. |

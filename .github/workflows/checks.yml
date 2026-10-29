@@ -31,6 +31,9 @@ jobs:
       - name: Validate sources.yaml and docs/
         run: python scripts/validate.py
 
+      - name: Build docs site (strict)
+        run: zensical build --clean --strict
+
       - name: Flag outdated pinned dependencies
         run: python scripts/check_versions.py
 

@@ -1,0 +1,4 @@
+[project]
+site_name = "Agentic Engineering Knowledge Base"
+docs_dir = "docs"
+site_dir = "site"

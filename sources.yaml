@@ -7,14 +7,14 @@
 #   publisher     who published it
 #   kind          blog | guide | docs | course | book | paper | spec | repo
 #   tier          primary (original author or official docs) | secondary (summary or commentary)
-#   license       all-rights-reserved | cc-by-sa-4.0 | apache-2.0 | mit | arxiv-default | unknown
+#   license       all-rights-reserved | cc-by-sa-4.0 | cc-by-4.0 | apache-2.0 | mit | arxiv-default | unknown
 #   published     YYYY-MM-DD, YYYY-MM or null
 #   status        unverified | verified | dead
 #   last_verified YYYY-MM-DD or null (date a human or the ingest run confirmed the URL serves this document)
 #   content_hash  sha256 of the fetched text, or null. Set by the ingest run; used to detect changes.
 #   notes         optional
 #
-# Phase 1 task: visit every URL marked `unverified`, fix it if wrong, then set status and last_verified.
+# Phase 1 task (done 2026-10-30): every URL was visited, fixed if wrong, and set to verified or dead.
 
 sources:
   # --- Concepts and practitioner guidance -------------------------------------------------
@@ -26,8 +26,8 @@ sources:
     tier: primary
     license: all-rights-reserved
     published: 2024-12-19
-    status: unverified
-    last_verified: null
+    status: verified
+    last_verified: 2026-10-30
     content_hash: null
     notes: Concepts hold up; the page itself says its tooling references are dated.
 
@@ -39,20 +39,20 @@ sources:
     tier: primary
     license: all-rights-reserved
     published: 2025-09-29
-    status: unverified
-    last_verified: null
+    status: verified
+    last_verified: 2026-10-30
     content_hash: null
 
   - id: anthropic-writing-tools
-    title: Writing effective tools for agents — with agents
+    title: Writing effective tools for AI agents — with agents
     url: https://www.anthropic.com/engineering/writing-tools-for-agents
     publisher: Anthropic
     kind: blog
     tier: primary
     license: all-rights-reserved
     published: 2025-09-11
-    status: unverified
-    last_verified: null
+    status: verified
+    last_verified: 2026-10-30
     content_hash: null
 
   - id: anthropic-multi-agent-research
@@ -63,8 +63,8 @@ sources:
     tier: primary
     license: all-rights-reserved
     published: 2025-06-13
-    status: unverified
-    last_verified: null
+    status: verified
+    last_verified: 2026-10-30
     content_hash: null
 
   - id: anthropic-demystifying-evals
@@ -75,8 +75,8 @@ sources:
     tier: primary
     license: all-rights-reserved
     published: 2026-01-09
-    status: unverified
-    last_verified: null
+    status: verified
+    last_verified: 2026-10-30
     content_hash: null
 
   - id: anthropic-long-running-harnesses
@@ -86,9 +86,9 @@ sources:
     kind: blog
     tier: primary
     license: all-rights-reserved
-    published: null
-    status: unverified
-    last_verified: null
+    published: 2025-11-26
+    status: verified
+    last_verified: 2026-10-30
     content_hash: null
 
   - id: openai-practical-guide
@@ -99,9 +99,10 @@ sources:
     tier: primary
     license: all-rights-reserved
     published: 2025-04
-    status: unverified
-    last_verified: null
+    status: verified
+    last_verified: 2026-10-30
     content_hash: null
+    notes: PDF title confirmed; PDF creation date 2025-04-07. Web landing page (openai.com/business/guides-and-resources/a-practical-guide-to-building-ai-agents/) blocks bots.
 
   - id: humanlayer-12-factor-agents
     title: 12-Factor Agents
@@ -112,7 +113,7 @@ sources:
     license: cc-by-sa-4.0
     published: null
     status: verified
-    last_verified: 2026-10-29
+    last_verified: 2026-10-30
     content_hash: null
     notes: Content CC BY-SA 4.0; code Apache-2.0. Adaptations must stay CC BY-SA.
 
@@ -124,8 +125,8 @@ sources:
     tier: primary
     license: all-rights-reserved
     published: 2023-06-23
-    status: unverified
-    last_verified: null
+    status: verified
+    last_verified: 2026-10-30
     content_hash: null
     notes: Historical framing. Predates native tool calling, MCP and context engineering.
 
@@ -138,8 +139,8 @@ sources:
     tier: primary
     license: all-rights-reserved
     published: 2025-10
-    status: unverified
-    last_verified: null
+    status: verified
+    last_verified: 2026-10-30
     content_hash: null
 
   - id: huggingface-agents-course
@@ -148,12 +149,12 @@ sources:
     publisher: Hugging Face
     kind: course
     tier: primary
-    license: unknown
+    license: apache-2.0
     published: null
-    status: unverified
-    last_verified: null
+    status: verified
+    last_verified: 2026-10-30
     content_hash: null
-    notes: TODO(verify) license of the course content repo.
+    notes: License is Apache-2.0 on the course content repo (huggingface/agents-course); course pages show no license.
 
   - id: huyen-ai-engineering
     title: AI Engineering
@@ -162,11 +163,11 @@ sources:
     kind: book
     tier: primary
     license: all-rights-reserved
-    published: 2025-01-07
-    status: unverified
-    last_verified: null
+    published: 2024-12-04
+    status: verified
+    last_verified: 2026-10-30
     content_hash: null
-    notes: Paid book. Cite chapters; never store text.
+    notes: Paid book. Cite chapters; never store text. O'Reilly page blocks bots; book record confirmed via O'Reilly copyright page (first release 2024-12-04).
 
   - id: husain-shankar-evals-book
     title: Evals for AI Engineers
@@ -176,10 +177,10 @@ sources:
     tier: primary
     license: all-rights-reserved
     published: 2026-10
-    status: unverified
-    last_verified: null
+    status: verified
+    last_verified: 2026-10-30
     content_hash: null
-    notes: Paid book. Cite chapters; never store text.
+    notes: Paid book. Cite chapters; never store text. O'Reilly page blocks bots; book record confirmed via O'Reilly copyright page (first release 2026-10-12).
 
   - id: hamel-blog
     title: Hamel Husain's blog
@@ -189,9 +190,10 @@ sources:
     tier: primary
     license: unknown
     published: null
-    status: unverified
-    last_verified: null
+    status: verified
+    last_verified: 2026-10-30
     content_hash: null
+    notes: "TODO(verify): no license stated on the site."
 
   - id: berkeley-agentic-ai-mooc-f25
     title: Agentic AI MOOC (Fall 2025)
@@ -201,23 +203,25 @@ sources:
     tier: primary
     license: unknown
     published: 2025
-    status: unverified
-    last_verified: null
+    status: verified
+    last_verified: 2026-10-30
     content_hash: null
 
   # --- Specs and framework docs -----------------------------------------------------------
+    notes: "TODO(verify): no license stated on the site."
+
   - id: mcp-spec
     title: Model Context Protocol specification
     url: https://modelcontextprotocol.io/specification
     publisher: Model Context Protocol project
     kind: spec
     tier: primary
-    license: unknown
+    license: apache-2.0
     published: null
-    status: unverified
-    last_verified: null
+    status: verified
+    last_verified: 2026-10-30
     content_hash: null
-    notes: Date-versioned revisions (YYYY-MM-DD). Record the revision a page relies on.
+    notes: Date-versioned revisions (YYYY-MM-DD); current revision 2026-07-28. Record the revision a page relies on. Spec and code moving MIT to Apache-2.0, docs CC-BY-4.0, older contributions MIT.
 
   - id: openai-agents-sdk-docs
     title: OpenAI Agents SDK (Python) documentation
@@ -225,25 +229,25 @@ sources:
     publisher: OpenAI
     kind: docs
     tier: primary
-    license: unknown
+    license: mit
     published: null
-    status: unverified
-    last_verified: null
+    status: verified
+    last_verified: 2026-10-30
     content_hash: null
-    notes: Pre-1.0 at time of writing; expect API churn.
+    notes: Pre-1.0 (latest release v0.24.0 when checked); expect API churn. License is of the repo; docs site shows none.
 
   - id: claude-agent-sdk-docs
     title: Claude Agent SDK documentation
-    url: https://docs.claude.com/en/docs/agent-sdk/overview
+    url: https://code.claude.com/docs/en/agent-sdk/overview
     publisher: Anthropic
     kind: docs
     tier: primary
     license: all-rights-reserved
     published: null
-    status: unverified
-    last_verified: null
+    status: verified
+    last_verified: 2026-10-30
     content_hash: null
-    notes: TODO(verify) canonical docs URL.
+    notes: "Old docs.claude.com URL redirects here. Terms: Anthropic Commercial Terms of Service."
 
   - id: langgraph-repo
     title: LangGraph
@@ -253,34 +257,36 @@ sources:
     tier: primary
     license: mit
     published: null
-    status: unverified
-    last_verified: null
+    status: verified
+    last_verified: 2026-10-30
     content_hash: null
-    notes: TODO(verify) license. 1.0 released 2025-10-22.
+    notes: 1.0 released 2025-10-22 (LangChain blog).
 
   - id: google-adk-docs
     title: Agent Development Kit (ADK) documentation
-    url: https://google.github.io/adk-docs/
+    url: https://adk.dev/
     publisher: Google
     kind: docs
     tier: primary
-    license: unknown
+    license: apache-2.0
     published: null
-    status: unverified
-    last_verified: null
+    status: verified
+    last_verified: 2026-10-30
     content_hash: null
+    notes: Old google.github.io/adk-docs URL redirects here. License is of the docs repo.
 
   - id: pydantic-ai-docs
     title: PydanticAI documentation
-    url: https://ai.pydantic.dev/
+    url: https://pydantic.dev/docs/ai/overview/
     publisher: Pydantic
     kind: docs
     tier: primary
-    license: unknown
+    license: mit
     published: null
-    status: unverified
-    last_verified: null
+    status: verified
+    last_verified: 2026-10-30
     content_hash: null
+    notes: Old ai.pydantic.dev URL redirects here. License is of the repo.
 
   - id: microsoft-agent-framework
     title: Microsoft Agent Framework
@@ -288,12 +294,12 @@ sources:
     publisher: Microsoft
     kind: repo
     tier: primary
-    license: unknown
+    license: mit
     published: null
-    status: unverified
-    last_verified: null
+    status: verified
+    last_verified: 2026-10-30
     content_hash: null
-    notes: Successor to AutoGen; 1.0 GA announced 2026-04-03.
+    notes: Successor to AutoGen; 1.0 GA announced 2026-04-03 (Microsoft devblog).
 
   - id: autogen-repo
     title: AutoGen
@@ -301,36 +307,38 @@ sources:
     publisher: Microsoft
     kind: repo
     tier: primary
-    license: unknown
+    license: cc-by-4.0
     published: null
-    status: unverified
-    last_verified: null
+    status: verified
+    last_verified: 2026-10-30
     content_hash: null
-    notes: In maintenance mode since 2025-10-02. Cite only to say so.
+    notes: Repo is archived and no longer maintained (its README says so). Docs CC-BY-4.0, code MIT. Cite only to say so.
 
   - id: otel-genai-semconv
     title: OpenTelemetry semantic conventions for generative AI
-    url: https://opentelemetry.io/docs/specs/semconv/gen-ai/
+    url: https://github.com/open-telemetry/semantic-conventions-genai
     publisher: OpenTelemetry
-    kind: spec
+    kind: repo
     tier: primary
-    license: unknown
+    license: apache-2.0
     published: null
-    status: unverified
-    last_verified: null
+    status: verified
+    last_verified: 2026-10-30
     content_hash: null
 
   # --- Papers -----------------------------------------------------------------------------
+    notes: Old opentelemetry.io/docs/specs/semconv/gen-ai/ page is a Moved stub; this repo is the new home.
+
   - id: paper-react
     title: "ReAct: Synergizing Reasoning and Acting in Language Models"
     url: https://arxiv.org/abs/2210.03629
     publisher: Yao et al.
     kind: paper
     tier: primary
-    license: arxiv-default
+    license: cc-by-4.0
     published: 2022-10-06
-    status: unverified
-    last_verified: null
+    status: verified
+    last_verified: 2026-10-30
     content_hash: null
 
   - id: paper-toolformer
@@ -341,8 +349,8 @@ sources:
     tier: primary
     license: arxiv-default
     published: 2023-02-09
-    status: unverified
-    last_verified: null
+    status: verified
+    last_verified: 2026-10-30
     content_hash: null
 
   - id: paper-reflexion
@@ -351,10 +359,10 @@ sources:
     publisher: Shinn et al.
     kind: paper
     tier: primary
-    license: arxiv-default
-    published: 2023-03
-    status: unverified
-    last_verified: null
+    license: cc-by-4.0
+    published: 2023-03-20
+    status: verified
+    last_verified: 2026-10-30
     content_hash: null
 
   - id: paper-swe-agent
@@ -363,10 +371,10 @@ sources:
     publisher: Yang et al.
     kind: paper
     tier: primary
-    license: arxiv-default
-    published: 2024-05
-    status: unverified
-    last_verified: null
+    license: cc-by-4.0
+    published: 2024-05-06
+    status: verified
+    last_verified: 2026-10-30
     content_hash: null
 
   # --- Secondary / landscape --------------------------------------------------------------
@@ -379,6 +387,6 @@ sources:
     license: apache-2.0
     published: null
     status: verified
-    last_verified: 2026-10-29
+    last_verified: 2026-10-30
     content_hash: null
     notes: Landscape index only. Known errors (12-Factor page, AutoGen rating, MCP versioning). Never cite for facts.
