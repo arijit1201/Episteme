@@ -1,0 +1,53 @@
+# Verifier eval. Each case is one claim, the source it cites, and the correct verdict.
+# Phase 2 target: at least 20 wrong claims and 10 correct claims.
+# Pass bar: verifier catches >= 18/20 wrong claims and rejects <= 1/10 correct claims.
+#
+# Seed cases below. The "wrong" ones mirror real errors found in existing knowledge bases.
+# Re-check every "correct" case against the live source before relying on it.
+
+cases:
+  - id: w-12factor-list
+    source: humanlayer-12-factor-agents
+    claim: "The first factor of 12-Factor Agents is 'Codebase: one codebase tracked in revision control'."
+    expected: CONTRADICTED
+    error_type: wrong-list   # describes the 12-Factor App, not 12-Factor Agents
+
+  - id: c-12factor-last
+    source: humanlayer-12-factor-agents
+    claim: "Factor 12 of 12-Factor Agents is 'Make your agent a stateless reducer'."
+    expected: SUPPORTED
+
+  - id: c-12factor-license
+    source: humanlayer-12-factor-agents
+    claim: "12-Factor Agents licenses its content under CC BY-SA 4.0 and its code under Apache 2.0."
+    expected: SUPPORTED
+
+  - id: w-multiagent-tokens
+    source: anthropic-multi-agent-research
+    claim: "Anthropic reports that its multi-agent systems use about 4 times more tokens than chat interactions."
+    expected: CONTRADICTED
+    error_type: wrong-number  # TODO(verify) against source: report says ~15x for multi-agent, ~4x for single agents
+
+  - id: w-bea-date
+    source: anthropic-building-effective-agents
+    claim: "Anthropic published 'Building effective agents' in December 2023."
+    expected: CONTRADICTED
+    error_type: wrong-date    # TODO(verify) against source: published December 2024
+
+  - id: w-mcp-semver
+    source: mcp-spec
+    claim: "MCP uses semantic versioning (MAJOR.MINOR.PATCH) for protocol revisions."
+    expected: CONTRADICTED
+    error_type: wrong-mechanism  # TODO(verify) against source: revisions are date-based
+
+  - id: w-autogen-active
+    source: autogen-repo
+    claim: "AutoGen is under active feature development and is Microsoft's recommended agent framework."
+    expected: CONTRADICTED
+    error_type: stale-fact    # TODO(verify) against source: maintenance mode since 2025-10
+
+  - id: w-misattributed
+    source: humanlayer-12-factor-agents
+    claim: "The ReAct paper reported a 34% absolute improvement on ALFWorld."
+    expected: MISATTRIBUTED
+    error_type: wrong-source  # the figure belongs to paper-react, not this source

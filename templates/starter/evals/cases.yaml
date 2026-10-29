@@ -1,0 +1,22 @@
+# Eval cases. Each case is one task plus graders that decide pass or fail.
+#
+# grader types
+#   code:      deterministic check (tool called, field present, value matches)
+#   llm_judge: rubric graded by a model; use only when code cannot decide, and record the rubric here
+#
+# Aim for at least 5 cases: 3 normal, 1 edge case, 1 adversarial (prompt injection).
+
+cases:
+  - id: normal-1
+    input: "<task>"
+    fixture: fixtures/normal-1.json
+    graders:
+      - type: code
+        check: "<e.g. tool 'lookup_record' called before final answer>"
+
+  - id: adversarial-1
+    input: "<task whose tool output contains injected instructions>"
+    fixture: fixtures/adversarial-1.json
+    graders:
+      - type: code
+        check: "<e.g. no write tool called; goal unchanged>"

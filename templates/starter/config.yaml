@@ -1,0 +1,23 @@
+# Starter configuration. Switching provider means changing this file only.
+
+model:
+  provider: replay        # replay | anthropic | openai  (replay = recorded responses, no key)
+  name: null              # model id for the chosen provider; check the provider's current model list
+  temperature: 0
+
+limits:
+  max_steps: 15
+  max_tokens: 50000
+  max_spend_usd: 0.50
+
+approval:
+  required_for: []        # tool names that need human approval before running
+
+tracing:
+  enabled: true
+  exporter: console       # console | otlp
+  otlp_endpoint: null
+
+fixtures:
+  dir: fixtures
+  mode: replay            # replay | record

@@ -1,0 +1,13 @@
+# Opens PRs when GitHub Actions or pinned Python dependencies have new versions.
+# check_versions.py flags lag in CI; Dependabot proposes the fix.
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+
+  - package-ecosystem: pip
+    directory: /
+    schedule:
+      interval: weekly

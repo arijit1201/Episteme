@@ -1,0 +1,53 @@
+# Free checks on every pull request and every push to main.
+# None of these jobs calls a paid model or needs an API key.
+name: checks
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest   # standard runner: free on public repos
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0     # full history so the secret scan sees every commit
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dev dependencies
+        run: pip install -r requirements-dev.txt
+
+      - name: Tests (scripts and starters, replay mode only)
+        run: pytest
+
+      - name: Validate sources.yaml and docs/
+        run: python scripts/validate.py
+
+      - name: Flag outdated pinned dependencies
+        run: python scripts/check_versions.py
+
+      - name: Link check
+        uses: lycheeverse/lychee-action@v2
+        with:
+          # 403 and 429 are accepted because some publishers block bots.
+          # Those URLs are still checked by the ingest run, which fetches them properly.
+          args: >-
+            --no-progress
+            --accept "100..=103,200..=299,403,429"
+            README.md docs/ sources.yaml
+          fail: true
+
+      - name: Secret scan
+        # Free for personal accounts. Organization accounts need a GITLEAKS_LICENSE secret,
+        # or replace this step with the gitleaks CLI.
+        uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

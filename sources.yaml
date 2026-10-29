@@ -1,0 +1,384 @@
+# Source registry. Every page cites sources by `id`.
+#
+# Fields
+#   id            unique, kebab-case
+#   title         document title
+#   url           canonical URL
+#   publisher     who published it
+#   kind          blog | guide | docs | course | book | paper | spec | repo
+#   tier          primary (original author or official docs) | secondary (summary or commentary)
+#   license       all-rights-reserved | cc-by-sa-4.0 | apache-2.0 | mit | arxiv-default | unknown
+#   published     YYYY-MM-DD, YYYY-MM or null
+#   status        unverified | verified | dead
+#   last_verified YYYY-MM-DD or null (date a human or the ingest run confirmed the URL serves this document)
+#   content_hash  sha256 of the fetched text, or null. Set by the ingest run; used to detect changes.
+#   notes         optional
+#
+# Phase 1 task: visit every URL marked `unverified`, fix it if wrong, then set status and last_verified.
+
+sources:
+  # --- Concepts and practitioner guidance -------------------------------------------------
+  - id: anthropic-building-effective-agents
+    title: Building effective agents
+    url: https://www.anthropic.com/engineering/building-effective-agents
+    publisher: Anthropic
+    kind: blog
+    tier: primary
+    license: all-rights-reserved
+    published: 2024-12-19
+    status: unverified
+    last_verified: null
+    content_hash: null
+    notes: Concepts hold up; the page itself says its tooling references are dated.
+
+  - id: anthropic-context-engineering
+    title: Effective context engineering for AI agents
+    url: https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents
+    publisher: Anthropic
+    kind: blog
+    tier: primary
+    license: all-rights-reserved
+    published: 2025-09-29
+    status: unverified
+    last_verified: null
+    content_hash: null
+
+  - id: anthropic-writing-tools
+    title: Writing effective tools for agents — with agents
+    url: https://www.anthropic.com/engineering/writing-tools-for-agents
+    publisher: Anthropic
+    kind: blog
+    tier: primary
+    license: all-rights-reserved
+    published: 2025-09-11
+    status: unverified
+    last_verified: null
+    content_hash: null
+
+  - id: anthropic-multi-agent-research
+    title: How we built our multi-agent research system
+    url: https://www.anthropic.com/engineering/multi-agent-research-system
+    publisher: Anthropic
+    kind: blog
+    tier: primary
+    license: all-rights-reserved
+    published: 2025-06-13
+    status: unverified
+    last_verified: null
+    content_hash: null
+
+  - id: anthropic-demystifying-evals
+    title: Demystifying evals for AI agents
+    url: https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents
+    publisher: Anthropic
+    kind: blog
+    tier: primary
+    license: all-rights-reserved
+    published: 2026-01-09
+    status: unverified
+    last_verified: null
+    content_hash: null
+
+  - id: anthropic-long-running-harnesses
+    title: Effective harnesses for long-running agents
+    url: https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents
+    publisher: Anthropic
+    kind: blog
+    tier: primary
+    license: all-rights-reserved
+    published: null
+    status: unverified
+    last_verified: null
+    content_hash: null
+
+  - id: openai-practical-guide
+    title: A practical guide to building agents
+    url: https://cdn.openai.com/business-guides-and-resources/a-practical-guide-to-building-agents.pdf
+    publisher: OpenAI
+    kind: guide
+    tier: primary
+    license: all-rights-reserved
+    published: 2025-04
+    status: unverified
+    last_verified: null
+    content_hash: null
+
+  - id: humanlayer-12-factor-agents
+    title: 12-Factor Agents
+    url: https://github.com/humanlayer/12-factor-agents
+    publisher: HumanLayer (Dex Horthy)
+    kind: repo
+    tier: primary
+    license: cc-by-sa-4.0
+    published: null
+    status: verified
+    last_verified: 2026-10-29
+    content_hash: null
+    notes: Content CC BY-SA 4.0; code Apache-2.0. Adaptations must stay CC BY-SA.
+
+  - id: weng-llm-powered-agents
+    title: LLM Powered Autonomous Agents
+    url: https://lilianweng.github.io/posts/2023-06-23-agent/
+    publisher: Lilian Weng
+    kind: blog
+    tier: primary
+    license: all-rights-reserved
+    published: 2023-06-23
+    status: unverified
+    last_verified: null
+    content_hash: null
+    notes: Historical framing. Predates native tool calling, MCP and context engineering.
+
+  # --- Courses and books ------------------------------------------------------------------
+  - id: deeplearningai-agentic-ai
+    title: Agentic AI (Andrew Ng)
+    url: https://www.deeplearning.ai/courses/agentic-ai/
+    publisher: DeepLearning.AI
+    kind: course
+    tier: primary
+    license: all-rights-reserved
+    published: 2025-10
+    status: unverified
+    last_verified: null
+    content_hash: null
+
+  - id: huggingface-agents-course
+    title: Hugging Face Agents Course
+    url: https://huggingface.co/learn/agents-course
+    publisher: Hugging Face
+    kind: course
+    tier: primary
+    license: unknown
+    published: null
+    status: unverified
+    last_verified: null
+    content_hash: null
+    notes: TODO(verify) license of the course content repo.
+
+  - id: huyen-ai-engineering
+    title: AI Engineering
+    url: https://www.oreilly.com/library/view/ai-engineering/9781098166298/
+    publisher: O'Reilly (Chip Huyen)
+    kind: book
+    tier: primary
+    license: all-rights-reserved
+    published: 2025-01-07
+    status: unverified
+    last_verified: null
+    content_hash: null
+    notes: Paid book. Cite chapters; never store text.
+
+  - id: husain-shankar-evals-book
+    title: Evals for AI Engineers
+    url: https://www.oreilly.com/library/view/evals-for-ai/9798341660717/
+    publisher: O'Reilly (Hamel Husain, Shreya Shankar)
+    kind: book
+    tier: primary
+    license: all-rights-reserved
+    published: 2026-10
+    status: unverified
+    last_verified: null
+    content_hash: null
+    notes: Paid book. Cite chapters; never store text.
+
+  - id: hamel-blog
+    title: Hamel Husain's blog
+    url: https://hamel.dev/
+    publisher: Hamel Husain
+    kind: blog
+    tier: primary
+    license: unknown
+    published: null
+    status: unverified
+    last_verified: null
+    content_hash: null
+
+  - id: berkeley-agentic-ai-mooc-f25
+    title: Agentic AI MOOC (Fall 2025)
+    url: https://agenticai-learning.org/f25
+    publisher: UC Berkeley RDI
+    kind: course
+    tier: primary
+    license: unknown
+    published: 2025
+    status: unverified
+    last_verified: null
+    content_hash: null
+
+  # --- Specs and framework docs -----------------------------------------------------------
+  - id: mcp-spec
+    title: Model Context Protocol specification
+    url: https://modelcontextprotocol.io/specification
+    publisher: Model Context Protocol project
+    kind: spec
+    tier: primary
+    license: unknown
+    published: null
+    status: unverified
+    last_verified: null
+    content_hash: null
+    notes: Date-versioned revisions (YYYY-MM-DD). Record the revision a page relies on.
+
+  - id: openai-agents-sdk-docs
+    title: OpenAI Agents SDK (Python) documentation
+    url: https://openai.github.io/openai-agents-python/
+    publisher: OpenAI
+    kind: docs
+    tier: primary
+    license: unknown
+    published: null
+    status: unverified
+    last_verified: null
+    content_hash: null
+    notes: Pre-1.0 at time of writing; expect API churn.
+
+  - id: claude-agent-sdk-docs
+    title: Claude Agent SDK documentation
+    url: https://docs.claude.com/en/docs/agent-sdk/overview
+    publisher: Anthropic
+    kind: docs
+    tier: primary
+    license: all-rights-reserved
+    published: null
+    status: unverified
+    last_verified: null
+    content_hash: null
+    notes: TODO(verify) canonical docs URL.
+
+  - id: langgraph-repo
+    title: LangGraph
+    url: https://github.com/langchain-ai/langgraph
+    publisher: LangChain
+    kind: repo
+    tier: primary
+    license: mit
+    published: null
+    status: unverified
+    last_verified: null
+    content_hash: null
+    notes: TODO(verify) license. 1.0 released 2025-10-22.
+
+  - id: google-adk-docs
+    title: Agent Development Kit (ADK) documentation
+    url: https://google.github.io/adk-docs/
+    publisher: Google
+    kind: docs
+    tier: primary
+    license: unknown
+    published: null
+    status: unverified
+    last_verified: null
+    content_hash: null
+
+  - id: pydantic-ai-docs
+    title: PydanticAI documentation
+    url: https://ai.pydantic.dev/
+    publisher: Pydantic
+    kind: docs
+    tier: primary
+    license: unknown
+    published: null
+    status: unverified
+    last_verified: null
+    content_hash: null
+
+  - id: microsoft-agent-framework
+    title: Microsoft Agent Framework
+    url: https://github.com/microsoft/agent-framework
+    publisher: Microsoft
+    kind: repo
+    tier: primary
+    license: unknown
+    published: null
+    status: unverified
+    last_verified: null
+    content_hash: null
+    notes: Successor to AutoGen; 1.0 GA announced 2026-04-03.
+
+  - id: autogen-repo
+    title: AutoGen
+    url: https://github.com/microsoft/autogen
+    publisher: Microsoft
+    kind: repo
+    tier: primary
+    license: unknown
+    published: null
+    status: unverified
+    last_verified: null
+    content_hash: null
+    notes: In maintenance mode since 2025-10-02. Cite only to say so.
+
+  - id: otel-genai-semconv
+    title: OpenTelemetry semantic conventions for generative AI
+    url: https://opentelemetry.io/docs/specs/semconv/gen-ai/
+    publisher: OpenTelemetry
+    kind: spec
+    tier: primary
+    license: unknown
+    published: null
+    status: unverified
+    last_verified: null
+    content_hash: null
+
+  # --- Papers -----------------------------------------------------------------------------
+  - id: paper-react
+    title: "ReAct: Synergizing Reasoning and Acting in Language Models"
+    url: https://arxiv.org/abs/2210.03629
+    publisher: Yao et al.
+    kind: paper
+    tier: primary
+    license: arxiv-default
+    published: 2022-10-06
+    status: unverified
+    last_verified: null
+    content_hash: null
+
+  - id: paper-toolformer
+    title: "Toolformer: Language Models Can Teach Themselves to Use Tools"
+    url: https://arxiv.org/abs/2302.04761
+    publisher: Schick et al.
+    kind: paper
+    tier: primary
+    license: arxiv-default
+    published: 2023-02-09
+    status: unverified
+    last_verified: null
+    content_hash: null
+
+  - id: paper-reflexion
+    title: "Reflexion: Language Agents with Verbal Reinforcement Learning"
+    url: https://arxiv.org/abs/2303.11366
+    publisher: Shinn et al.
+    kind: paper
+    tier: primary
+    license: arxiv-default
+    published: 2023-03
+    status: unverified
+    last_verified: null
+    content_hash: null
+
+  - id: paper-swe-agent
+    title: "SWE-agent: Agent-Computer Interfaces Enable Automated Software Engineering"
+    url: https://arxiv.org/abs/2405.15793
+    publisher: Yang et al.
+    kind: paper
+    tier: primary
+    license: arxiv-default
+    published: 2024-05
+    status: unverified
+    last_verified: null
+    content_hash: null
+
+  # --- Secondary / landscape --------------------------------------------------------------
+  - id: ankurkumarz-agentic-ai-kb
+    title: Agentic AI Knowledge Base
+    url: https://agentic-ai.readthedocs.io/en/latest/
+    publisher: Ankur Kumar (VedXAI)
+    kind: docs
+    tier: secondary
+    license: apache-2.0
+    published: null
+    status: verified
+    last_verified: 2026-10-29
+    content_hash: null
+    notes: Landscape index only. Known errors (12-Factor page, AutoGen rating, MCP versioning). Never cite for facts.
