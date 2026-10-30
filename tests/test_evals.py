@@ -16,3 +16,11 @@ def test_planted_errors_reference_known_sources():
         assert c["source"] in ids, f"{c['id']}: unknown source {c['source']}"
         assert c["expected"] in VERDICTS, f"{c['id']}: bad verdict {c['expected']}"
         assert c["claim"].strip()
+
+
+def test_planted_errors_meet_phase_2_size():
+    cases = yaml.safe_load((ROOT / "evals/verifier/planted_errors.yaml").read_text(encoding="utf-8"))["cases"]
+    correct = [c for c in cases if c["expected"] in {"SUPPORTED", "OPINION_OK"}]
+    wrong = [c for c in cases if c["expected"] not in {"SUPPORTED", "OPINION_OK"}]
+    assert len(wrong) >= 20
+    assert len(correct) >= 10
