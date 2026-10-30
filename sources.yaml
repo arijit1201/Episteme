@@ -28,7 +28,7 @@ sources:
     published: 2024-12-19
     status: verified
     last_verified: 2026-10-30
-    content_hash: null
+    content_hash: 60fd877c3eda79a0b533936be7078e386e4977ade9224e3c844261d02a1e3fcf
     notes: Concepts hold up; the page itself says its tooling references are dated.
 
   - id: anthropic-context-engineering
@@ -41,7 +41,7 @@ sources:
     published: 2025-09-29
     status: verified
     last_verified: 2026-10-30
-    content_hash: null
+    content_hash: bad48e9766c9427235cbbdba2c1eea0cc91eae20e3cf808a1f194e922bb33ac7
 
   - id: anthropic-writing-tools
     title: Writing effective tools for AI agents — with agents
@@ -53,7 +53,7 @@ sources:
     published: 2025-09-11
     status: verified
     last_verified: 2026-10-30
-    content_hash: null
+    content_hash: 05d8dffe8a7ebc2ab4d7c517f656db2419a3f3cbc318ca9f4d8e7908f0369658
 
   - id: anthropic-multi-agent-research
     title: How we built our multi-agent research system
@@ -65,7 +65,7 @@ sources:
     published: 2025-06-13
     status: verified
     last_verified: 2026-10-30
-    content_hash: null
+    content_hash: 396964a153e8228fbaccae3b906d818953d719fcde280e9f2501c3fa66b56101
 
   - id: anthropic-demystifying-evals
     title: Demystifying evals for AI agents
@@ -77,7 +77,7 @@ sources:
     published: 2026-01-09
     status: verified
     last_verified: 2026-10-30
-    content_hash: null
+    content_hash: 796f6c66ae735089d3d70c733f0d3fccdab0fa1dab372c246ac75b4427b730b5
 
   - id: anthropic-long-running-harnesses
     title: Effective harnesses for long-running agents
@@ -89,7 +89,7 @@ sources:
     published: 2025-11-26
     status: verified
     last_verified: 2026-10-30
-    content_hash: null
+    content_hash: c32dcff3237731a2f6a6bb9e66e0852c3b146ac66e1ba58aaae4ec4c48c1ccb9
 
   - id: openai-practical-guide
     title: A practical guide to building agents
@@ -101,7 +101,7 @@ sources:
     published: 2025-04
     status: verified
     last_verified: 2026-10-30
-    content_hash: null
+    content_hash: 7e63ae206fdbeefa911337ea2eed2d481ca35f13e387bfbe78c460cbff556fc5
     notes: PDF title confirmed; PDF creation date 2025-04-07. Web landing page (openai.com/business/guides-and-resources/a-practical-guide-to-building-ai-agents/) blocks bots.
 
   - id: humanlayer-12-factor-agents
@@ -114,7 +114,7 @@ sources:
     published: null
     status: verified
     last_verified: 2026-10-30
-    content_hash: null
+    content_hash: 38f57f5e7184b61410bd43bf892e8733a3281b1ba59f74e9fc2be6cdfb6bc8bc
     notes: Content CC BY-SA 4.0; code Apache-2.0. Adaptations must stay CC BY-SA.
 
   - id: weng-llm-powered-agents
@@ -220,7 +220,7 @@ sources:
     published: null
     status: verified
     last_verified: 2026-10-30
-    content_hash: null
+    content_hash: 223d4f2a09b390356dcb4675e14cab8b091bd34d9dbf15a7c5160bfe701c98a0
     notes: Date-versioned revisions (YYYY-MM-DD); current revision 2026-07-28. Record the revision a page relies on. Spec and code moving MIT to Apache-2.0, docs CC-BY-4.0, older contributions MIT.
 
   - id: openai-agents-sdk-docs
@@ -233,7 +233,7 @@ sources:
     published: null
     status: verified
     last_verified: 2026-10-30
-    content_hash: null
+    content_hash: 0a34addbd9df01427653df10675f3cd4083eb15ea553e6e273da491f5d522924
     notes: Pre-1.0 (latest release v0.24.0 when checked); expect API churn. License is of the repo; docs site shows none.
 
   - id: claude-agent-sdk-docs
@@ -326,6 +326,32 @@ sources:
     last_verified: 2026-10-30
     content_hash: null
 
+  - id: anthropic-prompt-injection-defenses
+    title: Mitigating the risk of prompt injections in browser use
+    url: https://www.anthropic.com/research/prompt-injection-defenses
+    publisher: Anthropic
+    kind: blog
+    tier: primary
+    license: all-rights-reserved
+    published: null
+    status: verified
+    last_verified: 2026-10-30
+    content_hash: c916b69c672a0cb5dfd17b150249a8c6ff6d8a7ad0507b5f3aff7744a0d7904c
+    notes: "TODO(verify): publication date not shown in the extracted text; a search result gave 2025-11-24."
+
+  - id: owasp-llm01-prompt-injection
+    title: "LLM01:2025 Prompt Injection"
+    url: https://genai.owasp.org/llmrisk/llm01-prompt-injection/
+    publisher: OWASP Gen AI Security Project
+    kind: docs
+    tier: primary
+    license: unknown
+    published: 2025
+    status: verified
+    last_verified: 2026-10-30
+    content_hash: 490eef64ee19f53bfab33fbf6307e44bfb06bd8725d65947258ce41ef23847e5
+    notes: "TODO(verify): license of the page content is not stated in the extracted text."
+
   # --- Papers -----------------------------------------------------------------------------
     notes: Old opentelemetry.io/docs/specs/semconv/gen-ai/ page is a Moved stub; this repo is the new home.
 
@@ -339,7 +365,7 @@ sources:
     published: 2022-10-06
     status: verified
     last_verified: 2026-10-30
-    content_hash: null
+    content_hash: f2d8bc9b976c6dc2d55bbe5e706a8d1a4e1fae57ae86911e879f42fbcfbcca89
 
   - id: paper-toolformer
     title: "Toolformer: Language Models Can Teach Themselves to Use Tools"
